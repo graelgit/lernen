@@ -1157,18 +1157,29 @@ function renderSpStart() {
     (spArts().length > 1 ? '<div class="seg" role="group">' + spArts().map((a) => '<button type="button" data-art="' + a + '" aria-pressed="' + (a === art) + '">' + SP_ART[a] + "</button>").join("") + "</div>" : "") +
     '<div class="step-h">Vorbereitungszeit</div><div class="seg" role="group">' +
     [0, 2, 5, 10, 20].map((m) => '<button type="button" data-prep="' + m + '" aria-pressed="' + (set.prep === m) + '">' + (m ? m + " Min." : "keine") + "</button>").join("") + "</div>" +
+    '<label class="own-min">oder eigene Zeit: <input type="number" id="sp-prep-own" min="0" max="60" step="1" inputmode="numeric" placeholder="z. B. 15" value="' + ([0, 2, 5, 10, 20].includes(set.prep) ? "" : set.prep) + '"> Minuten</label>' +
     '<div class="step-h">Sprechzeit</div><div class="seg" role="group">' +
     SP_TALK[art].map((m) => '<button type="button" data-talk="' + m + '" aria-pressed="' + (set[art] === m) + '">' + m + " Min.</button>").join("") + "</div>" +
-    '<p class="hint">Stell die Zeiten so ein, wie sie in eurer Prüfung sind.</p>' +
+    '<label class="own-min">oder eigene Zeit: <input type="number" id="sp-talk-own" min="1" max="60" step="1" inputmode="numeric" placeholder="z. B. 4" value="' + (SP_TALK[art].includes(set[art]) ? "" : set[art]) + '"> Minuten</label>' +
+    (sp.err ? '<div class="fb bad"><b>So geht es nicht.</b>' + esc(sp.err) + "</div>" : "") +
+    '<p class="hint">Stell die Zeiten so ein, wie sie in eurer Prüfung sind. Die Einstellung bleibt auf diesem Gerät gespeichert.</p>' +
     '<div class="btn-row"><button class="btn primary" id="sp-draw" type="button">Aufgabe ziehen</button></div>' +
     "<details><summary>Alle Aufgaben (" + pool.length + ")</summary><div class=\"src-list\" style=\"margin-top:10px\">" +
     pool.map((o) => '<button class="src" type="button" data-pick="' + o.i + '"><h3>' + esc(o.x.titel) + "</h3><p>" + esc(o.x.q) + "</p></button>").join("") + "</div></details>" +
     spPhrases(false);
   $$("[data-art]", el).forEach((b) => (b.onclick = () => { sp.art = b.dataset.art; renderSpStart(); }));
-  $$("[data-prep]", el).forEach((b) => (b.onclick = () => { set.prep = +b.dataset.prep; save(); renderSpStart(); }));
-  $$("[data-talk]", el).forEach((b) => (b.onclick = () => { set[art] = +b.dataset.talk; save(); renderSpStart(); }));
-  $("#sp-draw").onclick = () => { spPick(art); renderSprechen(); window.scrollTo(0, 0); };
-  $$("[data-pick]", el).forEach((b) => (b.onclick = () => { spPick(art, +b.dataset.pick); renderSprechen(); window.scrollTo(0, 0); }));
+  $$("[data-prep]", el).forEach((b) => (b.onclick = () => { set.prep = +b.dataset.prep; sp.err = ""; save(); renderSpStart(); }));
+  $$("[data-talk]", el).forEach((b) => (b.onclick = () => { set[art] = +b.dataset.talk; sp.err = ""; save(); renderSpStart(); }));
+  // eigene Zeiten: beim Tippen nur die Knöpfe abwählen, übernommen wird beim Start (sonst springt der Cursor raus)
+  [["#sp-prep-own", "[data-prep]"], ["#sp-talk-own", "[data-talk]"]].forEach(([inp, btn]) => { $(inp).oninput = () => { if ($(inp).value !== "") $$(btn, el).forEach((b) => b.setAttribute("aria-pressed", "false")); }; });
+  const takeOwn = () => {
+    const pv = $("#sp-prep-own").value.trim(), tv = $("#sp-talk-own").value.trim();
+    if (pv !== "") { const v = Math.round(Number(pv)); if (!(v >= 0 && v <= 60)) { sp.err = "Vorbereitungszeit: bitte 0 bis 60 Minuten."; return false; } set.prep = v; }
+    if (tv !== "") { const v = Math.round(Number(tv)); if (!(v >= 1 && v <= 60)) { sp.err = "Sprechzeit: bitte 1 bis 60 Minuten."; return false; } set[art] = v; }
+    sp.err = ""; save(); return true;
+  };
+  $("#sp-draw").onclick = () => { if (!takeOwn()) return renderSpStart(); spPick(art); renderSprechen(); window.scrollTo(0, 0); };
+  $$("[data-pick]", el).forEach((b) => (b.onclick = () => { if (!takeOwn()) return renderSpStart(); spPick(art, +b.dataset.pick); renderSprechen(); window.scrollTo(0, 0); }));
 }
 function spClock(endAt, onZero) {
   const tick = () => {
