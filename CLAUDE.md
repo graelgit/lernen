@@ -39,7 +39,7 @@ Alle Abschnitte außer den Metadaten sind optional. Ein Modus erscheint nur, wen
   ],
   "quiz": [{ "t": "korea", "q": "Frage?", "a": "richtige Antwort", "falsch": ["f1", "f2", "f3"], "e": "Erklärung" }],
   "ketten": [{ "t": "korea", "titel": "Koreakrieg", "merk": "Merksatz nach dem Prüfen", "schritte": ["Ursache", "…", "Folge"] }],
-  "karten": [{ "begriff": "DMZ", "erklaerung": "…", "t": "korea", "typ": "begriff" }],   // typ: "begriff" | "person"
+  "karten": [{ "begriff": "DMZ", "erklaerung": "…", "t": "korea", "typ": "begriff" }],   // typ: "begriff" | "person" | "zitat" (bei zitat steht das Zitat in begriff, Zeilenumbrüche als " / ", erklaerung: wer, wann, Bedeutung)
   "quellen": [{
     "id": "truman50", "t": "korea", "titel": "…", "autor": "…", "datum": "27. Juni 1950", "art": "Erklärung", "adressat": "…",
     "kontext": "Hintergrund", "text": ["Absatz 1", "Absatz 2"], "hinweis": "Gekürzt, eigene Übersetzung.",
@@ -48,6 +48,9 @@ Alle Abschnitte außer den Metadaten sind optional. Ein Modus erscheint nur, wen
   }],
   "klausur": [{ "t": "korea", "op": "Beurteilen", "q": "Aufgabe", "punkte": ["Musterlösung-Punkt", "…"] }],
   "operatoren": [{ "name": "Erläutern", "afb": "II", "text": "Was verlangt wird." }],
+  "sprechen": [{ "t": "characters", "art": "monolog", "titel": "Kurztitel", "q": "Prüfungsaufgabe", "rollen": ["Partner A: …", "Partner B: …"],   // art: monolog | gespraech; rollen nur beim Gespräch
+    "punkte": ["Was man sagen könnte", "…"], "zitate": ["passendes Zitat"], "nachfragen": ["mögliche Nachfrage des Lehrers"] }],
+  "phrasen": [{ "gruppe": "Giving your opinion", "items": ["In my view, …"] }],   // Redemittel, erscheinen im Sprechtraining
   "probe": { "pflicht": "bipolar", "ohne": [] }   // Probeklausur: pflicht = Thema, zu dem Teil B immer eine Frage stellt (Ost-West-Konflikt); ohne (optional) = Themen, die nur angeschnitten werden und in der Probeklausur nicht vorkommen
 }
 ```
@@ -64,6 +67,7 @@ Alle Abschnitte außer den Metadaten sind optional. Ein Modus erscheint nur, wen
 - Seiten: `#/` Startseite (großer Satz, „Los geht's“, „Powered by Discipline“, echte Quizfrage aus der nächsten Klausur mit Quiz als Vorschau), `#/klausuren` (Karten mit Countdown, Buttons „Lernen“/„Lernplan“, Archiv), `#/kalender` (Monatsansicht aus `klausuren/index.json`, „In meinen Kalender“ erzeugt eine .ics-Datei), `#/updates` (neueste fünf aus `updates.json`). `#/probeklausur` (Fachwahl für die Probeklausur). Diese vier Namen dürfen keine Klausur-id sein. Die Leiste oben verlinkt die Seiten. Die Handy-App startet direkt bei `#/klausuren`.
 - Lernplan (`#/<id>/lernplan`): erscheint, sobald die Klausur `themen` und Lernkarten oder Quiz hat. Phase 1 pro Thema Lernkarten + Quiz, Phase 2 gemischte Wiederholung (Quiz gemischt, Karteikarten, Ketten, Quellen mit je 20 Minuten), letzter Tag roter Faden (Lernkarten-Eintrag mit `"t": "all"`) + Klausurfragen. Minuten pro Aufgabe stehen in `PLAN_MIN` in `app.js`. Plan und Haken liegen in `kt:<id>` (`plan`, `planDone`).
 - Probeklausur (`#/<id>/probe`, Reiter `#/probeklausur` zur Fachwahl): erscheint, sobald die Klausur `quellen` hat. Teil A eine Quelle mit ihren Aufgaben (ohne Vergleichsaufgabe) oder ein Quellenpaar desselben Themas, bei dem die zweite Quelle eine „Vergleichen“-Aufgabe hat (M2 nur mit dieser). Teil B 1 bis 2 Fragen aus `klausur` zu einem anderen Thema plus eine Frage zu `probe.pflicht`, falls die Quellen das Pflichtthema nicht schon abdecken. Umfang 65 bis 85 Minuten, geschätzt über die AFB der Operatoren (`AFB_COST` in `app.js`, plus 5 Minuten Lesen pro Quelle). Bearbeitungszeit wählbar (Standard 90), Timer mit Warnung bei 10 Minuten, Antworten in `kt:<id>` (`probe`), Selbstkorrektur am Erwartungshorizont, Notenschätzung nach dem üblichen Abi-Schlüssel, Verlauf in `probeHist`. Damit gute Probeklausuren entstehen: Quellenaufgaben und Klausurfragen sauber mit Operatoren und `operatoren`-Liste (mit AFB) anlegen; „Vergleichen“-Aufgaben einer Quelle sollen sich auf eine andere Quelle desselben Themas beziehen.
+- Sprechtraining (`#/<id>/sprechen`): für mündliche Prüfungen, erscheint, sobald die Klausur `sprechen` hat. Monolog oder Gespräch zu zweit wählen, Vorbereitungs- und Sprechzeit einstellbar (in `kt:<id>` unter `sp`), Aufgabe ziehen, Timer, optionale Aufnahme (nur im Tab, nie gespeichert), Nachfragen ziehen, danach Checkliste aus `punkte` und `zitate`. Fremdsprachige Fächer: Inhalte in der Fremdsprache, Bedienung bleibt Deutsch. Macbeth (`englisch-oral-2026-10`) ist komplett aus Claudes eigenem Wissen erstellt und so gekennzeichnet.
 - Design: an tmua.io angelehnt, aber schwarz. Weiße Schrift, Grautöne, Schrift Inter, runde Knöpfe, viel Abstand. Keine grünen Deko-Akzente; Grün/Rot nur für richtig/falsch und Warnungen. Fächerfarben (`farben`) nur auf Streifen und Punkten der jeweiligen Klausur.
 
 ## Technik

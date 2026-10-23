@@ -41,6 +41,13 @@ for (const f of files) {
   });
   if (K.probe && K.probe.pflicht && !tids.has(K.probe.pflicht)) err(f, "probe.pflicht ist kein bekanntes Thema");
   ((K.probe && K.probe.ohne) || []).forEach((t) => { if (!tids.has(t)) err(f, "probe.ohne: unbekanntes Thema " + t); });
+  (K.karten || []).forEach((k, i) => { if (k.typ && !["begriff", "person", "zitat"].includes(k.typ)) err(f, "karten[" + i + "] typ muss begriff, person oder zitat sein"); });
+  checkT("sprechen", K.sprechen);
+  (K.sprechen || []).forEach((s, i) => {
+    if (!["monolog", "gespraech"].includes(s.art)) err(f, "sprechen[" + i + "] art muss monolog oder gespraech sein");
+    if (!s.q || !s.titel || !Array.isArray(s.punkte) || !s.punkte.length) err(f, "sprechen[" + i + "] braucht titel, q und punkte");
+  });
+  (K.phrasen || []).forEach((g, i) => { if (!g.gruppe || !Array.isArray(g.items) || !g.items.length) err(f, "phrasen[" + i + "] braucht gruppe und items"); });
   (K.klausur || []).forEach((k, i) => { if (!k.q || !Array.isArray(k.punkte)) err(f, "klausur[" + i + "] unvollständig"); });
   console.log("geprüft: " + f);
 }

@@ -73,7 +73,7 @@ function go(v, p) {
   if (location.hash === h) route(); else location.hash = h;
 }
 async function route() {
-  stopProbeTimer();
+  stopProbeTimer(); stopSpTimer(); stopSpRec();
   const parts = parseHash();
   if (!parts.length) { K = null; window.scrollTo(0, 0); return renderLanding(); }
   if (SITE_PAGES.includes(parts[0])) { K = null; window.scrollTo(0, 0); return renderSite(parts[0]); }
@@ -301,7 +301,7 @@ function renderInstall() {
 }
 
 /* ---------- Seiten einer Klausur ---------- */
-const TITLES = { lernplan: "Lernplan", lernen: "Lernen", quiz: "Quiz", kette: "Ursache → Folge", karten: "Karteikarten", quellen: "Quellen", quelle: "Quellen", klausur: "Klausurfragen", probe: "Probeklausur" };
+const TITLES = { lernplan: "Lernplan", lernen: "Lernen", quiz: "Quiz", kette: "Ursache → Folge", karten: "Karteikarten", quellen: "Quellen", quelle: "Quellen", klausur: "Klausurfragen", probe: "Probeklausur", sprechen: "Sprechtraining" };
 function render() {
   document.body.classList.toggle("on-home", view === "home");
   if (view === "home" || !TITLES[view]) { view = "home"; return renderHome(); }
@@ -312,7 +312,7 @@ function render() {
     '<span id="tb-right"></span></div></div>' +
     '<main class="stage" id="stage"></main>';
   $("#back").onclick = () => (fromPlan ? go("lernplan") : view === "quelle" ? go("quellen") : go("home"));
-  ({ lernplan: renderPlan, lernen: renderLernen, quiz: renderQuiz, kette: renderKette, karten: renderKarten, quellen: renderQuellen, quelle: renderQuelle, klausur: renderKlausur, probe: renderProbe })[view]();
+  ({ lernplan: renderPlan, lernen: renderLernen, quiz: renderQuiz, kette: renderKette, karten: renderKarten, quellen: renderQuellen, quelle: renderQuelle, klausur: renderKlausur, probe: renderProbe, sprechen: renderSprechen })[view]();
 }
 const stage = () => $("#stage");
 
@@ -328,6 +328,7 @@ function renderHome() {
   if (planReady()) { const pi = planCardInfo(); train.push(card("lernplan", "plan", "Dein Fahrplan bis zur Klausur", "Lernplan", S.plan ? "Deine Aufgaben für heute und die nächsten Tage. Jede Aufgabe führt direkt in den passenden Modus." : "Sag, an welchen Tagen und wie lange du lernst, und du bekommst einen Plan bis zur Klausur.", pi[0], pi[1])); }
   if (has("lernen")) train.push(card("lernen", "learn", "Erst verstehen", "Lernen", "Alle Inhalte als Lernkarten zum Durchblättern, ohne Druck. Danach direkt testen.", K.lernen.length + " Themen", learnedCount + " gelesen"));
   if (has("quellen")) train.push(card("quellen", "train", "Quellenarbeit", "Quellen-Training", "Quellenauszüge mit Einordnungsfragen, Klausuraufgaben und Erwartungshorizont zum Abhaken.", n(K.quellen, (q) => inTopic(q.t)) + " Quellen", done + " bearbeitet"));
+  if (has("sprechen")) train.push(card("sprechen", "plan", "Für die mündliche Prüfung", "Sprechtraining", "Monolog und Gespräch zu zweit: Aufgabe ziehen, Vorbereitungszeit, Sprechzeit mit Timer, eigene Aufnahme, danach Checkliste mit Punkten und Zitaten.", K.sprechen.filter((x) => x.art === "monolog").length + " Monolog-Aufgaben", K.sprechen.filter((x) => x.art === "gespraech").length + " Gesprächsaufgaben"));
   const probeCard = has("quellen") ? (() => { const pi = probeCardInfo(); return card("probe", "probe", "Wie in der echten Klausur", "Probeklausur", "Quelle, Aufgaben mit Operatoren und Timer auf einem Klausurblatt. Danach selbst korrigieren und eine grobe Note bekommen.", pi[0], pi[1]); })() : "";
   if (has("klausur")) train.push(card("klausur", "train", "Offene Fragen", "Klausurfragen", "Mögliche Aufgaben mit Operatoren. Erst selbst antworten, dann mit der Musterlösung vergleichen.", n(K.klausur, (q) => inTopic(q.t)) + " Fragen", "mit Musterlösung"));
   const games = [];
@@ -380,6 +381,7 @@ function progressHTML() {
   return '<div class="bars">' + rows + "</div>" + foot;
 }
 function start(mode) {
+  if (mode === "sprechen") sp = null;
   if (mode === "lernplan") planForm = null;
   if (mode === "lernen") lern = null;
   if (mode === "quiz") { newQuiz(); }
@@ -561,8 +563,8 @@ function newKarten(type) {
 function renderKarten() {
   if (!karten) newKarten("all");
   const kt = karten;
-  const hasPersons = K.karten.some((c) => c.typ === "person");
-  const seg = hasPersons ? '<div class="seg" role="group">' + [["all", "Alle"], ["begriff", "Begriffe"], ["person", "Personen"]].map((o) => '<button type="button" data-type="' + o[0] + '" aria-pressed="' + (kt.type === o[0]) + '">' + o[1] + "</button>").join("") + "</div>" : "";
+  const segs = [["all", "Alle"], ["begriff", "Begriffe"], ["person", "Personen"], ["zitat", "Zitate"]].filter((o) => o[0] === "all" || K.karten.some((c) => c.typ === o[0]));
+  const seg = segs.length > 2 ? '<div class="seg" role="group">' + segs.map((o) => '<button type="button" data-type="' + o[0] + '" aria-pressed="' + (kt.type === o[0]) + '">' + o[1] + "</button>").join("") + "</div>" : "";
   if (!kt.deck.length) {
     stage().innerHTML = seg + '<div class="result" style="margin-top:18px"><div class="kicker">' + esc(topicName(S.topic)) + '</div><div class="big">' + (kt.total ? "Alle sitzen" : "Keine Karten") + "</div><p>" + (kt.total ? kt.total + " Karten gewusst." : "Für diese Auswahl gibt es keine Karten.") + '</p><div class="btn-row"><button class="btn primary" id="again" type="button">Stapel neu mischen</button><button class="btn" id="home" type="button">Zur Übersicht</button></div></div>';
     bindSeg(); $("#again").onclick = () => { newKarten(kt.type); renderKarten(); }; $("#home").onclick = () => go("home");
@@ -573,8 +575,8 @@ function renderKarten() {
     '<div class="qmeta" style="margin-top:16px"><span class="tag">' + esc(topicName(c.t)) + "</span><span>" + kt.known + " von " + kt.total + " gewusst</span></div>" +
     '<div class="progress" style="margin-top:10px"><i style="width:' + (kt.known / kt.total) * 100 + '%"></i></div>' +
     '<div class="flash' + (kt.flipped ? " flipped" : "") + '"><div class="flash-inner" id="card" role="button" tabindex="0" aria-label="Karte umdrehen">' +
-    '<div class="face front"><span class="kicker">' + (c.typ === "person" ? "Person" : "Begriff") + '</span><div class="term">' + esc(c.begriff) + '</div><span class="hint" style="margin:0">Erklär es dir selbst, dann umdrehen.</span></div>' +
-    '<div class="face back"><span class="kicker">' + esc(c.begriff) + "</span><p>" + esc(c.erklaerung) + "</p></div></div></div>" +
+    '<div class="face front"><span class="kicker">' + ({ person: "Person", zitat: "Zitat" }[c.typ] || "Begriff") + "</span>" + (c.typ === "zitat" ? '<blockquote class="quote">' + esc(c.begriff).replace(/ \/ /g, "<br>") + "</blockquote>" : '<div class="term">' + esc(c.begriff) + "</div>") + '<span class="hint" style="margin:0">' + (c.typ === "zitat" ? "Wer sagt das, wann, und was bedeutet es?" : "Erklär es dir selbst, dann umdrehen.") + "</span></div>" +
+    '<div class="face back"><span class="kicker">' + (c.typ === "zitat" ? "Zitat" : esc(c.begriff)) + "</span><p>" + esc(c.erklaerung) + "</p></div></div></div>" +
     (kt.flipped ? '<div class="btn-row"><button class="btn" id="again" type="button">Nochmal</button><button class="btn primary" id="known" type="button">Gewusst</button></div>'
       : '<div class="btn-row"><button class="btn primary" id="flip" type="button">Umdrehen</button></div>') +
     '<p class="keys">Leertaste = umdrehen · 1 = nochmal · 2 = gewusst</p>';
@@ -692,7 +694,7 @@ function klausurCard(k, i) {
 
 /* ---------- Lernplan ---------- */
 // Geschätzte Minuten pro Aufgabe. Phase 1: jedes Thema mit Lernkarten + Quiz, Phase 2: gemischte Wiederholung, letzter Tag: roter Faden + Klausurfragen.
-const PLAN_MIN = { lernen: 15, quiz: 10, karten: 10, kette: 10, quelle: 20, klausur: 20 };
+const PLAN_MIN = { lernen: 15, quiz: 10, karten: 10, kette: 10, quelle: 20, klausur: 20, sprechen: 15 };
 const WD_ORDER = [1, 2, 3, 4, 5, 6, 0];
 let planForm = null, fromPlan = false;
 const fadenLabel = (l) => "Roter Faden lesen" + (/roter faden/i.test(l.name) ? "" : ": " + l.name);
@@ -708,6 +710,7 @@ function planUnits() {
 function reviewPool() {
   const pool = [];
   if (has("quiz")) pool.push({ min: PLAN_MIN.quiz, next: () => ({ mode: "quiz", t: "all", label: "Quiz gemischt, alle Themen" }) });
+  if (has("sprechen")) { const arts = ["monolog", "gespraech"].filter((a) => K.sprechen.some((x) => x.art === a)); let i = 0; pool.push({ min: PLAN_MIN.sprechen, next: () => { const a = arts[i++ % arts.length]; return { mode: "sprechen", t: "all", art: a, label: "Sprechtraining: " + SP_ART[a] }; } }); }
   if (has("karten")) pool.push({ min: PLAN_MIN.karten, next: () => ({ mode: "karten", t: "all", label: "Karteikarten: alle Begriffe" }) });
   const ks = (K.ketten || []).map((k, i) => ({ k: k, i: i })).filter((o) => o.k.t !== "all");
   if (ks.length) { let i = 0; pool.push({ min: PLAN_MIN.kette, next: () => { const o = ks[i++ % ks.length]; return { mode: "kette", t: o.k.t, k: o.i, label: "Kette ordnen: " + o.k.titel }; } }); }
@@ -747,6 +750,7 @@ function buildPlan(wd, min) {
     if (faden) last.tasks.push({ mode: "lernen", t: "all", label: fadenLabel(faden), min: PLAN_MIN.lernen, phase: 3 });
     if (has("quiz")) last.tasks.push({ mode: "quiz", t: "all", label: "Quiz gemischt, alle Themen", min: PLAN_MIN.quiz, phase: 3 });
     if (has("klausur")) last.tasks.push({ mode: "klausur", t: "all", label: "Klausurfragen durchgehen", min: PLAN_MIN.klausur, phase: 3 });
+    if (has("sprechen")) last.tasks.push({ mode: "sprechen", t: "all", art: "gespraech", label: "Sprechtraining: Generalprobe Monolog und Gespräch", min: 20, phase: 3 });
     plan.warn = "Bis zur Klausur bleibt dir nur noch ein Lerntag. Alle Themen einzeln schaffst du nicht mehr. Priorität: erst der rote Faden, damit du die Zusammenhänge hast, dann ein gemischtes Quiz, dann die Klausurfragen." + prio;
   } else {
     let di = 0, fits = true;
@@ -769,7 +773,8 @@ function buildPlan(wd, min) {
     }
     if (fits) {
       const pool = reviewPool(), st = { p: 0 };
-      before.forEach((d) => fillDay(d, min, pool, st));
+      const cap = min - (has("sprechen") ? PLAN_MIN.sprechen : 0);   // Platz für die tägliche Sprechübung
+      before.forEach((d) => fillDay(d, cap, pool, st));
     } else {
       // zu wenig Tage: mehrere Themen pro Tag zusammenfassen
       before.forEach((d) => (d.tasks = []));
@@ -779,9 +784,15 @@ function buildPlan(wd, min) {
       plan.warn = "Für " + units.length + " Themen hast du vor dem letzten Tag nur " + before.length + (before.length === 1 ? " Lerntag" : " Lerntage") + ". Deshalb sind mehrere Themen pro Tag zusammengefasst, das sind bis zu " + perDay + " Minuten am Tag statt " + min + ". " +
         "Priorität: Mach auf jeden Fall die Quizze und am letzten Tag den roten Faden mit den Klausurfragen. Die Lernkarten kannst du überfliegen, wenn die Zeit nicht reicht." + prio + " Mehr Lerntage oder mehr Zeit pro Tag machen den Plan entspannter.";
     }
+    // mündliche Prüfung: jeden Tag eine Sprechübung, auch wenn der Tag dadurch länger wird
+    if (has("sprechen")) {
+      const arts = ["monolog", "gespraech"].filter((x) => K.sprechen.some((y) => y.art === x)); let j = 0;
+      before.forEach((d) => { if (!d.tasks.some((x) => x.mode === "sprechen")) { const a = arts[j++ % arts.length]; d.tasks.push({ mode: "sprechen", t: "all", art: a, label: "Sprechtraining: " + SP_ART[a], min: PLAN_MIN.sprechen, phase: 2 }); } });
+    }
     if (faden) last.tasks.push({ mode: "lernen", t: "all", label: fadenLabel(faden), min: PLAN_MIN.lernen, phase: 3 });
     else if (has("quiz")) last.tasks.push({ mode: "quiz", t: "all", label: "Quiz gemischt, alle Themen", min: PLAN_MIN.quiz, phase: 3 });
     if (has("klausur")) last.tasks.push({ mode: "klausur", t: "all", label: "Klausurfragen durchgehen", min: PLAN_MIN.klausur, phase: 3 });
+    if (has("sprechen")) last.tasks.push({ mode: "sprechen", t: "all", art: "gespraech", label: "Sprechtraining: Generalprobe Monolog und Gespräch", min: 20, phase: 3 });
   }
   days.forEach((d) => d.tasks.forEach((x, j) => (x.id = d.date + ":" + j)));
   return plan;
@@ -797,6 +808,7 @@ function runTask(id) {
   S.topic = x.t || "all"; save(); fromPlan = true;
   if (x.mode === "quelle") return go("quelle", x.q);
   if (x.mode === "kette") { kette = null; newKette(x.k); return go("kette"); }
+  if (x.mode === "sprechen") { sp = { art: x.art || "monolog", i: null, phase: "start", rec: false }; return go("sprechen"); }
   start(x.mode);
 }
 function renderPlan() {
@@ -1089,6 +1101,153 @@ function probeCardInfo() {
   if (P && P.state === "korrektur") return ["Abgegeben, Korrektur offen", "Weiter →"];
   return [h.length ? "Zuletzt: ≈ " + h[h.length - 1].np + " Punkte" : "Noch keine geschrieben", "ca. 75 Min."];
 }
+
+/* ---------- Sprechtraining (mündliche Prüfung) ---------- */
+// Monolog: Aufgabe ziehen, Vorbereitungszeit, Sprechzeit, danach Checkliste. Gespräch: zu zweit mit Rollen und Nachfragen.
+// Aufnahme nur im Speicher dieses Tabs, nichts wird gespeichert oder hochgeladen.
+const SP_ART = { monolog: "Monolog", gespraech: "Gespräch zu zweit" };
+const SP_TALK = { monolog: [3, 5, 7, 10], gespraech: [5, 10, 15] };
+let sp = null, spTimer = null, spRec = null;
+function stopSpTimer() { if (spTimer) { clearInterval(spTimer); spTimer = null; } }
+function stopSpRec() {
+  if (!spRec) return;
+  try { if (spRec.mr.state !== "inactive") spRec.mr.stop(); } catch (e) {}
+  spRec.stream.getTracks().forEach((t) => t.stop());
+  spRec = null;
+}
+function spSet() { return S.sp || (S.sp = { prep: 5, monolog: 5, gespraech: 10 }); }
+const spArts = () => ["monolog", "gespraech"].filter((a) => K.sprechen.some((x) => x.art === a));
+function spPool(art) {
+  const all = K.sprechen.map((x, i) => ({ x: x, i: i })).filter((o) => o.x.art === art);
+  const f = all.filter((o) => inTopic(o.x.t));
+  return f.length ? f : all;
+}
+function spPick(art, i) {
+  if (i === undefined) {
+    let pool = spPool(art);
+    if (pool.length > 1 && sp && sp.i != null) pool = pool.filter((o) => o.i !== sp.i);
+    i = pool[Math.floor(Math.random() * pool.length)].i;
+  }
+  sp = { art: art, i: i, phase: "task", notes: "", checks: {}, nq: 0, rec: sp ? sp.rec : false, audio: null, recErr: "" };
+}
+function spPhrases(open) {
+  if (!has("phrasen")) return "";
+  return "<details" + (open ? " open" : "") + '><summary>Useful Phrases</summary><div class="phr">' + K.phrasen.map((g) =>
+    "<div><b>" + esc(g.gruppe) + "</b><ul>" + g.items.map((x) => "<li>" + esc(x) + "</li>").join("") + "</ul></div>").join("") + "</div></details>";
+}
+function spTaskHead(x) {
+  return '<div class="kicker">' + SP_ART[x.art] + " · " + esc(topicName(x.t)) + '</div><h2 class="q" style="margin:6px 0 10px">' + esc(x.q) + "</h2>" +
+    (x.rollen ? '<div class="sp-roles">' + x.rollen.map((r) => "<div>" + esc(r) + "</div>").join("") + "</div>" : "");
+}
+function renderSprechen() {
+  stopSpTimer();
+  const tb = $("#tb-right"); if (tb) tb.innerHTML = "";
+  if (!sp) sp = { art: spArts()[0], i: null, phase: "start", rec: false };
+  if (sp.phase === "start" || sp.i == null) return renderSpStart();
+  if (sp.phase === "task" || sp.phase === "prep") return renderSpTask();
+  if (sp.phase === "talk") return renderSpTalk();
+  return renderSpDone();
+}
+function renderSpStart() {
+  const el = stage(), set = spSet(), art = sp.art;
+  const pool = spPool(art);
+  el.innerHTML =
+    '<div class="kicker">' + esc(topicName(S.topic)) + '</div><h2 class="q" style="margin-top:6px">Sprechtraining</h2>' +
+    '<p class="hint" style="margin-top:-8px">Aufgabe ziehen, vorbereiten, laut sprechen, danach mit der Checkliste vergleichen. Am besten zu zweit und wirklich laut, nicht nur im Kopf.</p>' +
+    (spArts().length > 1 ? '<div class="seg" role="group">' + spArts().map((a) => '<button type="button" data-art="' + a + '" aria-pressed="' + (a === art) + '">' + SP_ART[a] + "</button>").join("") + "</div>" : "") +
+    '<div class="step-h">Vorbereitungszeit</div><div class="seg" role="group">' +
+    [0, 2, 5, 10, 20].map((m) => '<button type="button" data-prep="' + m + '" aria-pressed="' + (set.prep === m) + '">' + (m ? m + " Min." : "keine") + "</button>").join("") + "</div>" +
+    '<div class="step-h">Sprechzeit</div><div class="seg" role="group">' +
+    SP_TALK[art].map((m) => '<button type="button" data-talk="' + m + '" aria-pressed="' + (set[art] === m) + '">' + m + " Min.</button>").join("") + "</div>" +
+    '<p class="hint">Stell die Zeiten so ein, wie sie in eurer Prüfung sind.</p>' +
+    '<div class="btn-row"><button class="btn primary" id="sp-draw" type="button">Aufgabe ziehen</button></div>' +
+    "<details><summary>Alle Aufgaben (" + pool.length + ")</summary><div class=\"src-list\" style=\"margin-top:10px\">" +
+    pool.map((o) => '<button class="src" type="button" data-pick="' + o.i + '"><h3>' + esc(o.x.titel) + "</h3><p>" + esc(o.x.q) + "</p></button>").join("") + "</div></details>" +
+    spPhrases(false);
+  $$("[data-art]", el).forEach((b) => (b.onclick = () => { sp.art = b.dataset.art; renderSpStart(); }));
+  $$("[data-prep]", el).forEach((b) => (b.onclick = () => { set.prep = +b.dataset.prep; save(); renderSpStart(); }));
+  $$("[data-talk]", el).forEach((b) => (b.onclick = () => { set[art] = +b.dataset.talk; save(); renderSpStart(); }));
+  $("#sp-draw").onclick = () => { spPick(art); renderSprechen(); window.scrollTo(0, 0); };
+  $$("[data-pick]", el).forEach((b) => (b.onclick = () => { spPick(art, +b.dataset.pick); renderSprechen(); window.scrollTo(0, 0); }));
+}
+function spClock(endAt, onZero) {
+  const tick = () => {
+    const t = $("#sp-timer"); if (!t) return stopSpTimer();
+    const rem = endAt - Date.now();
+    t.textContent = rem >= 0 ? fmtClock(rem) : "+" + fmtClock(-rem);
+    t.classList.toggle("warn", rem <= 60000 && rem > 0); t.classList.toggle("over", rem < 0);
+    const big = $("#sp-big"); if (big) { big.textContent = t.textContent; big.classList.toggle("over", rem < 0); }
+    if (rem <= 0 && onZero) { const f = onZero; onZero = null; f(); }
+  };
+  $("#tb-right").innerHTML = '<span class="pill ptimer" id="sp-timer"></span>';
+  tick(); spTimer = setInterval(tick, 250);
+}
+function renderSpTask() {
+  const el = stage(), set = spSet(), x = K.sprechen[sp.i];
+  const canRec = !!(navigator.mediaDevices && window.MediaRecorder);
+  const prepping = sp.phase === "prep";
+  el.innerHTML = spTaskHead(x) +
+    (prepping ? '<textarea id="sp-notes" placeholder="Stichpunkte (werden nicht gespeichert)">' + esc(sp.notes) + "</textarea>" + spPhrases(false) : "") +
+    (canRec ? '<label class="sp-rec"><input type="checkbox" id="sp-rec"' + (sp.rec ? " checked" : "") + "> Mich beim Sprechen aufnehmen (bleibt nur in diesem Tab)</label>" : "") +
+    '<div class="btn-row">' +
+    (prepping ? '<button class="btn primary" id="sp-talk" type="button">Jetzt sprechen</button>'
+      : (set.prep ? '<button class="btn primary" id="sp-prep" type="button">Vorbereitung starten (' + set.prep + " Min.)</button>" : "") +
+        '<button class="btn' + (set.prep ? "" : " primary") + '" id="sp-talk" type="button">' + (set.prep ? "Ohne Vorbereitung sprechen" : "Sprechen starten") + "</button>" +
+        '<button class="btn" id="sp-other" type="button">Andere Aufgabe</button>') +
+    '</div><div class="btn-row" style="margin-top:8px"><button class="btn small" id="sp-back" type="button">Zur Auswahl</button></div>';
+  const n = $("#sp-notes"); if (n) n.oninput = () => (sp.notes = n.value);
+  const r = $("#sp-rec"); if (r) r.onchange = () => (sp.rec = r.checked);
+  const p = $("#sp-prep"); if (p) p.onclick = () => { sp.phase = "prep"; sp.endAt = Date.now() + set.prep * 60000; renderSprechen(); };
+  $("#sp-talk").onclick = () => spStartTalk();
+  const o = $("#sp-other"); if (o) o.onclick = () => { spPick(sp.art); renderSprechen(); };
+  $("#sp-back").onclick = () => { stopSpRec(); sp.phase = "start"; renderSprechen(); };
+  if (prepping) spClock(sp.endAt, () => spStartTalk());
+}
+function spStartTalk() {
+  const set = spSet();
+  sp.phase = "talk"; sp.endAt = Date.now() + set[sp.art] * 60000; sp.audio = null; sp.recErr = "";
+  if (sp.rec) {
+    navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+      const chunks = [], mr = new MediaRecorder(stream);
+      mr.ondataavailable = (e) => { if (e.data && e.data.size) chunks.push(e.data); };
+      mr.onstop = () => { sp.audio = URL.createObjectURL(new Blob(chunks, { type: mr.mimeType || "audio/webm" })); if (view === "sprechen" && sp.phase === "done") keepScroll(renderSprechen); };
+      mr.start(); spRec = { mr: mr, stream: stream };
+      const s = $("#sp-recstate"); if (s) s.hidden = false;
+    }).catch(() => { sp.recErr = "Kein Zugriff aufs Mikrofon. Erlaube es in den Browser-Einstellungen oder übe ohne Aufnahme."; const s = $("#sp-recerr"); if (s) { s.hidden = false; s.textContent = sp.recErr; } });
+  }
+  renderSprechen(); window.scrollTo(0, 0);
+}
+function renderSpTalk() {
+  const el = stage(), x = K.sprechen[sp.i], nf = x.nachfragen || [];
+  el.innerHTML = '<div class="sp-big" id="sp-big"></div>' + spTaskHead(x) +
+    '<p class="sp-recstate" id="sp-recstate"' + (spRec ? "" : " hidden") + ">● Aufnahme läuft</p>" +
+    '<p class="fb bad" id="sp-recerr"' + (sp.recErr ? "" : " hidden") + ">" + esc(sp.recErr) + "</p>" +
+    (sp.notes.trim() ? '<div class="k-ans">' + esc(sp.notes) + "</div>" : "") +
+    (nf.length && sp.nq ? '<div class="sp-nf">' + nf.slice(0, sp.nq).map((q) => '<p><span class="kicker">Nachfrage</span>' + esc(q) + "</p>").join("") + "</div>" : "") +
+    '<div class="btn-row">' + (nf.length && sp.nq < nf.length ? '<button class="btn" id="sp-nq" type="button">Nachfrage des Lehrers ziehen</button>' : "") +
+    '<button class="btn primary" id="sp-done" type="button">Fertig</button></div>';
+  const q = $("#sp-nq"); if (q) q.onclick = () => { sp.nq++; keepScroll(renderSprechen); };
+  $("#sp-done").onclick = () => { stopSpTimer(); stopSpRec(); sp.phase = "done"; renderSprechen(); window.scrollTo(0, 0); };
+  spClock(sp.endAt);
+}
+function renderSpDone() {
+  const el = stage(), x = K.sprechen[sp.i];
+  const items = x.punkte.map((p, j) => ({ k: "p" + j, txt: p })).concat((x.zitate || []).map((z, j) => ({ k: "z" + j, txt: "„" + z + "“", z: true })));
+  const hit = items.filter((it) => sp.checks[it.k]).length;
+  el.innerHTML = '<div class="kicker">' + SP_ART[x.art] + " · ausgewertet</div><h2 class=\"q\" style=\"margin-top:6px\">" + esc(x.titel) + "</h2>" +
+    '<p class="hint" style="margin-top:-8px">Hak ab, was du wirklich gesagt hast. Fehlt etwas Wichtiges, übe die Aufgabe gleich nochmal.</p>' +
+    (sp.audio ? '<div class="sp-audio"><span class="kicker">Deine Aufnahme</span><audio controls src="' + sp.audio + '"></audio></div>' : "") +
+    '<div class="eh-head" style="margin-top:14px">Was du sagen könntest</div><ul class="eh">' + items.filter((it) => !it.z).map((it) => spCheck(it)).join("") + "</ul>" +
+    ((x.zitate || []).length ? '<div class="eh-head" style="margin-top:14px">Passende Zitate</div><ul class="eh">' + items.filter((it) => it.z).map((it) => spCheck(it)).join("") + "</ul>" : "") +
+    '<p class="awarded">' + hit + " von " + items.length + " angesprochen</p>" +
+    ((x.nachfragen || []).length ? '<div class="eh-head" style="margin-top:14px">Diese Nachfragen könnten kommen</div><ul class="sp-list">' + x.nachfragen.map((q) => "<li>" + esc(q) + "</li>").join("") + "</ul>" : "") +
+    '<div class="btn-row"><button class="btn primary" id="sp-again" type="button">Gleiche Aufgabe nochmal</button><button class="btn" id="sp-new" type="button">Neue Aufgabe</button><button class="btn" id="sp-back" type="button">Zur Auswahl</button></div>';
+  $$("[data-spk]", el).forEach((c) => (c.onchange = () => { sp.checks[c.dataset.spk] = c.checked; keepScroll(renderSprechen); }));
+  $("#sp-again").onclick = () => spPick(sp.art, sp.i) || renderSprechen();
+  $("#sp-new").onclick = () => { spPick(sp.art); renderSprechen(); window.scrollTo(0, 0); };
+  $("#sp-back").onclick = () => { sp.phase = "start"; renderSprechen(); };
+}
+function spCheck(it) { return '<li><label><input type="checkbox" data-spk="' + it.k + '"' + (sp.checks[it.k] ? " checked" : "") + "><span>" + esc(it.txt) + "</span></label></li>"; }
 
 /* ---------- Tastatur ---------- */
 document.addEventListener("keydown", (e) => {

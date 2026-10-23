@@ -1,11 +1,1738 @@
 {
  "id": "englisch-oral-2026-10",
  "fach": "Englisch",
- "titel": "Oral Examination",
+ "titel": "Oral Examination: Macbeth",
  "kurs": "Q13",
  "datum": "2026-10-27",
+ "beschreibung": "Macbeth für Monolog und Gespräch. Achtung: komplett aus Claudes eigenem Wissen erstellt, nicht aus eurem Unterricht. Gleicht es mit euren Unterlagen ab.",
  "farben": [
   "#1F3A93",
   "#B22234"
+ ],
+ "themen": [
+  {
+   "id": "context",
+   "name": "Context"
+  },
+  {
+   "id": "plot",
+   "name": "Plot"
+  },
+  {
+   "id": "characters",
+   "name": "Characters"
+  },
+  {
+   "id": "themes",
+   "name": "Themes"
+  },
+  {
+   "id": "language",
+   "name": "Language & Style"
+  }
+ ],
+ "lernen": [
+  {
+   "t": "all",
+   "name": "The Big Picture",
+   "cards": [
+    {
+     "h": "Read this first",
+     "p": [
+      "Source: written by Claude from its own knowledge, not from your class material. Check it against your notes.",
+      "Macbeth is a tragedy about ambition: a brave, loyal soldier murders his king, becomes a tyrant and is destroyed.",
+      "For the oral exam you need three things: the plot, how the characters develop and the big themes, each backed up with a quote."
+     ]
+    },
+    {
+     "h": "1 · Temptation",
+     "p": [
+      "The witches' prophecy awakens Macbeth's ambition.",
+      "Lady Macbeth pushes him to act when he hesitates."
+     ]
+    },
+    {
+     "h": "2 · The crime",
+     "p": [
+      "Macbeth murders King Duncan and becomes king.",
+      "Guilt starts immediately: blood that will not wash off, sleep that is lost.",
+      "Nature itself is thrown into disorder."
+     ]
+    },
+    {
+     "h": "3 · Tyranny",
+     "p": [
+      "To stay safe, Macbeth keeps killing: Banquo, then Macduff's wife and children.",
+      "Each crime leads to the next: \"I am in blood stepped in so far ...\""
+     ]
+    },
+    {
+     "h": "4 · Collapse",
+     "p": [
+      "Lady Macbeth is broken by guilt and dies.",
+      "Macbeth feels nothing any more: life \"signifying nothing\"."
+     ]
+    },
+    {
+     "h": "5 · Restoration",
+     "p": [
+      "The prophecies come true in an unexpected way.",
+      "Macduff kills Macbeth, Malcolm becomes the rightful king and order returns."
+     ]
+    },
+    {
+     "h": "Why it matters",
+     "p": [
+      "Breaking the natural order by killing a rightful king leads to chaos, guilt and destruction.",
+      "Context: written for King James I, who feared regicide, treason and witchcraft."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "context",
+   "name": "Context",
+   "cards": [
+    {
+     "h": "Key idea",
+     "p": [
+      "Macbeth was written around 1606 for King James I. It warns against killing a king and reflects the king's fears of witchcraft and treason."
+     ],
+     "big": true
+    },
+    {
+     "h": "King James I",
+     "p": [
+      "King of Scotland (as James VI) and from 1603 also King of England",
+      "Patron of Shakespeare's theatre company, the King's Men",
+      "Believed he was descended from Banquo: that is why Banquo is shown as noble and the witches show a line of kings descending from him (Act 4).",
+      "Wrote a book about witchcraft, \"Daemonologie\""
+     ]
+    },
+    {
+     "h": "Divine Right of Kings",
+     "p": [
+      "Belief that kings are chosen by God",
+      "Great Chain of Being: God has given everything its fixed place, with the king at the top of human society.",
+      "Regicide (killing a king) is therefore a crime against God and nature.",
+      "That is why nature goes wrong after Duncan's murder: darkness during the day, storms, horses eating each other."
+     ]
+    },
+    {
+     "h": "Treason and the Gunpowder Plot",
+     "p": [
+      "1605: Catholic plotters tried to blow up King James and Parliament.",
+      "Fear of treason and traitors was everywhere.",
+      "The Porter's joke about an \"equivocator\" refers to the plotters' trial, where misleading double-meaning answers were defended.",
+      "Equivocation (saying something ambiguous to mislead) is exactly how the witches speak."
+     ]
+    },
+    {
+     "h": "Witchcraft",
+     "p": [
+      "Most people at the time believed witches were real and served the devil.",
+      "Witchcraft could be punished by death.",
+      "For the audience the witches were a real and frightening threat, not just fantasy."
+     ]
+    },
+    {
+     "h": "Source and genre",
+     "p": [
+      "Shakespeare used Holinshed's Chronicles, a history of Scotland, but changed many facts.",
+      "Macbeth is his shortest tragedy: fast, dark and violent.",
+      "Tragedy: a noble hero falls because of a fatal flaw, and order is restored at the end."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "plot",
+   "name": "Plot",
+   "cards": [
+    {
+     "h": "Key idea",
+     "p": [
+      "Acts 1 and 2: prophecy and murder. Acts 3 and 4: tyranny. Act 5: collapse and restoration of order."
+     ],
+     "big": true
+    },
+    {
+     "h": "Act 1: The prophecy",
+     "p": [
+      "Macbeth and Banquo return as heroes from a battle against rebels and Norway.",
+      "Three witches greet Macbeth as Thane of Glamis, Thane of Cawdor and future king. Banquo will father kings.",
+      "Macbeth is immediately made Thane of Cawdor: the first prophecy comes true.",
+      "Duncan names his son Malcolm heir to the throne (Prince of Cumberland), an obstacle for Macbeth.",
+      "Lady Macbeth reads Macbeth's letter and plans the murder.",
+      "When Macbeth hesitates, she questions his manhood and he agrees."
+     ]
+    },
+    {
+     "h": "Act 2: The murder",
+     "p": [
+      "Macbeth sees a dagger floating in the air before the murder.",
+      "He kills Duncan in his sleep but brings the daggers back with him; Lady Macbeth returns them and smears the guards with blood.",
+      "A drunken Porter jokes that he is the porter of hell's gate.",
+      "Macduff discovers the body, Macbeth kills the guards, supposedly out of rage.",
+      "Duncan's sons Malcolm and Donalbain flee and look guilty, so Macbeth is crowned.",
+      "Nature is disturbed: darkness by day, horses eating each other."
+     ]
+    },
+    {
+     "h": "Act 3: Tyranny begins",
+     "p": [
+      "Banquo suspects Macbeth.",
+      "Because the witches promised the crown to Banquo's descendants, Macbeth hires murderers to kill Banquo and his son Fleance.",
+      "Banquo is killed, Fleance escapes.",
+      "At a banquet Macbeth sees Banquo's ghost and loses control; Lady Macbeth tries to cover for him.",
+      "Macduff refuses to come to court and goes to England to join Malcolm."
+     ]
+    },
+    {
+     "h": "Act 4: The second prophecy",
+     "p": [
+      "Macbeth visits the witches again. The apparitions say: beware Macduff; no man born of a woman can harm him; he is safe until Birnam Wood comes to Dunsinane.",
+      "He also sees a line of kings descending from Banquo.",
+      "Macbeth has Macduff's wife and children murdered.",
+      "In England Malcolm tests Macduff's loyalty.",
+      "Macduff hears about his family's death and vows revenge; an English army supports Malcolm."
+     ]
+    },
+    {
+     "h": "Act 5: Downfall",
+     "p": [
+      "Lady Macbeth sleepwalks and tries to wash invisible blood off her hands. She dies, probably by suicide.",
+      "Malcolm's soldiers carry branches from Birnam Wood as camouflage: the wood \"moves\".",
+      "Macbeth fights on, but learns that Macduff was not born naturally (\"untimely ripped\" from his mother's womb).",
+      "Macduff kills Macbeth and brings his head to Malcolm.",
+      "Malcolm becomes king and calls Macbeth and his wife \"this dead butcher and his fiend-like queen\"."
+     ]
+    }
+   ]
+  },
+  {
+   "t": "characters",
+   "name": "Characters",
+   "cards": [
+    {
+     "h": "Key idea",
+     "p": [
+      "Many characters are foils: Banquo and Macduff show how a loyal man reacts, Duncan and Malcolm show what a good king is."
+     ],
+     "big": true
+    },
+    {
+     "h": "Macbeth",
+     "p": [
+      "Beginning: a brave, loyal soldier (\"brave Macbeth\"), but already ambitious",
+      "Has a conscience: hesitates before the murder and is horrified afterwards",
+      "After the murder: guilt, hallucinations, sleeplessness",
+      "Becomes a tyrant who kills without telling his wife",
+      "End: numb and hopeless, but fights to the last",
+      "Tragic hero: his fatal flaw (hamartia) is his \"vaulting ambition\""
+     ]
+    },
+    {
+     "h": "Lady Macbeth",
+     "p": [
+      "Ambitious and manipulative, she pushes Macbeth to murder",
+      "Calls on evil spirits to \"unsex\" her and take away her pity",
+      "Questions Macbeth's manhood to make him act",
+      "In control after the murder and at the banquet",
+      "Shut out of Macbeth's later plans, she loses her influence",
+      "Guilt breaks through: sleepwalking, hand-washing, death. She starts strong and he weak, at the end it is the other way round."
+     ]
+    },
+    {
+     "h": "Banquo",
+     "p": [
+      "Hears a prophecy too, but does not act on it",
+      "Foil to Macbeth: shows that ambition can be resisted",
+      "Distrusts the witches: evil may tell small truths to lead people into ruin",
+      "His ghost shows Macbeth's guilt",
+      "Ancestor of King James I in the play"
+     ]
+    },
+    {
+     "h": "Macduff",
+     "p": [
+      "Discovers Duncan's murder and does not trust Macbeth",
+      "Loyal to Scotland rather than to Macbeth: goes to England to fight him",
+      "Leaves his family behind; they are murdered",
+      "Grieves openly: a man must also \"feel it as a man\", a different idea of manhood",
+      "Kills Macbeth: he is the man not \"of woman born\""
+     ]
+    },
+    {
+     "h": "Duncan and Malcolm",
+     "p": [
+      "Duncan: good, generous king, but too trusting",
+      "Duncan's murder is the central crime of the play",
+      "Malcolm: careful, tests Macduff before he trusts him",
+      "Malcolm describes the virtues a good king needs",
+      "At the end he restores order as the rightful king"
+     ]
+    },
+    {
+     "h": "The Witches",
+     "p": [
+      "Called the \"weird sisters\"; strange, half human, half supernatural",
+      "Speak in riddles and double meanings (equivocation)",
+      "Never tell Macbeth to kill anyone, they only predict",
+      "Big question: do they control fate, or do they only tempt Macbeth to do what he already wants?"
+     ]
+    }
+   ]
+  },
+  {
+   "t": "themes",
+   "name": "Themes",
+   "cards": [
+    {
+     "h": "Key idea",
+     "p": [
+      "Ambition without morality destroys everything: the order of the state, nature and the human mind."
+     ],
+     "big": true
+    },
+    {
+     "h": "Ambition",
+     "p": [
+      "Main driving force of the play",
+      "Macbeth admits he has no reason except \"vaulting ambition\"",
+      "Lady Macbeth is ambitious for him",
+      "Banquo shows the alternative: ambition that is controlled",
+      "Ambition leads to murder, tyranny and downfall"
+     ]
+    },
+    {
+     "h": "Guilt and conscience",
+     "p": [
+      "Shown through blood that cannot be washed off",
+      "Hallucinations: the dagger, Banquo's ghost",
+      "Lost sleep: \"Macbeth does murder sleep\"",
+      "Macbeth's mind is \"full of scorpions\"",
+      "Lady Macbeth's guilt comes out later and destroys her"
+     ]
+    },
+    {
+     "h": "Fate and free will",
+     "p": [
+      "The witches predict, but do not force Macbeth",
+      "Macbeth chooses to murder: free will",
+      "The prophecy may be self-fulfilling: he acts because he heard it",
+      "The second prophecy gives him false security",
+      "The play leaves it open, which makes it a good discussion topic"
+     ]
+    },
+    {
+     "h": "Appearance and reality",
+     "p": [
+      "\"Fair is foul, and foul is fair\": nothing is what it seems",
+      "Lady Macbeth: look innocent, but be the serpent underneath",
+      "Duncan trusts the wrong people twice",
+      "The witches' prophecies are true, but misleading"
+     ]
+    },
+    {
+     "h": "Kingship and order",
+     "p": [
+      "Good kings (Duncan, Malcolm, the English King Edward) bring order and health",
+      "Macbeth as tyrant brings fear, murder and chaos",
+      "Regicide disturbs nature itself",
+      "At the end order is restored with the rightful king"
+     ]
+    },
+    {
+     "h": "Masculinity",
+     "p": [
+      "Lady Macbeth links manhood with violence",
+      "Macbeth: \"I dare do all that may become a man\"",
+      "Macduff shows a different manhood: courage and feeling",
+      "The witches have beards: gender roles are confused"
+     ]
+    },
+    {
+     "h": "The supernatural",
+     "p": [
+      "Witches, apparitions, Banquo's ghost, the floating dagger",
+      "Creates fear and atmosphere",
+      "Links to the Jacobean belief in witchcraft",
+      "Open question: are the visions real or products of Macbeth's guilty mind?"
+     ]
+    }
+   ]
+  },
+  {
+   "t": "language",
+   "name": "Language & Style",
+   "cards": [
+    {
+     "h": "Key idea",
+     "p": [
+      "The language mirrors the characters' minds: verse for control, prose for breakdown, images of blood, darkness and sleep for guilt."
+     ],
+     "big": true
+    },
+    {
+     "h": "Verse and prose",
+     "p": [
+      "Nobles mostly speak blank verse: unrhymed lines with five stresses (iambic pentameter).",
+      "Prose is used by the Porter and by Lady Macbeth when she sleepwalks: her mind has lost control.",
+      "The witches speak in short rhyming lines with a chant-like rhythm, which sets them apart."
+     ]
+    },
+    {
+     "h": "Soliloquies, asides and dramatic irony",
+     "p": [
+      "Soliloquies show inner conflict: before the murder (Act 1), the dagger (Act 2), \"Tomorrow, and tomorrow\" (Act 5).",
+      "Asides let the audience hear Macbeth's secret thoughts.",
+      "Dramatic irony: Duncan praises the castle where he will be murdered; the audience knows more than the characters."
+     ]
+    },
+    {
+     "h": "Key imagery",
+     "p": [
+      "Blood: violence and guilt",
+      "Darkness and night: evil and hidden deeds",
+      "Sleep: innocence and peace of mind, which Macbeth loses",
+      "Clothing: Macbeth wears \"borrowed robes\", the crown does not fit him",
+      "Nature and animals: an owl kills a falcon, the natural order is upside down"
+     ]
+    },
+    {
+     "h": "Key techniques",
+     "p": [
+      "Paradox and antithesis: \"Fair is foul, and foul is fair\"",
+      "Equivocation: the witches' double meanings",
+      "Pathetic fallacy: storms and darkness reflect evil deeds",
+      "Short, broken dialogue right after the murder shows panic",
+      "The Porter scene: comic relief, but it also turns the castle into the gate of hell"
+     ]
+    },
+    {
+     "h": "Tragedy",
+     "p": [
+      "Tragic hero: a man of high status and good qualities",
+      "Hamartia: the fatal flaw, here ambition",
+      "Downfall caused by his own choices",
+      "The audience feels pity and fear (catharsis)",
+      "Order is restored at the end"
+     ]
+    }
+   ]
+  }
+ ],
+ "quiz": [
+  {
+   "t": "context",
+   "q": "For which king was Macbeth written?",
+   "a": "James I",
+   "falsch": [
+    "Elizabeth I",
+    "Henry VIII",
+    "Charles I"
+   ],
+   "e": "James I was King of Scotland and, from 1603, also King of England. He was the patron of Shakespeare's company."
+  },
+  {
+   "t": "context",
+   "q": "Why is Banquo shown in such a positive light?",
+   "a": "King James believed he was descended from Banquo",
+   "falsch": [
+    "Banquo was Shakespeare's ancestor",
+    "Banquo was a famous saint",
+    "The audience already knew him from another play"
+   ],
+   "e": "In Act 4 the witches show a line of kings descending from Banquo."
+  },
+  {
+   "t": "context",
+   "q": "What is regicide?",
+   "a": "The murder of a king",
+   "falsch": [
+    "A rebellion against the church",
+    "Betraying one's lord in battle",
+    "Killing a family member"
+   ],
+   "e": "Duncan's murder is a regicide, the worst crime imaginable for Shakespeare's audience."
+  },
+  {
+   "t": "context",
+   "q": "Why was killing a king seen as so terrible?",
+   "a": "Kings were believed to be chosen by God",
+   "falsch": [
+    "Kings were the richest people in the country",
+    "Only nobles were allowed to judge a king",
+    "It always started a war with England"
+   ],
+   "e": "This belief is called the Divine Right of Kings."
+  },
+  {
+   "t": "context",
+   "q": "Which event of 1605 made treason a hot topic?",
+   "a": "The Gunpowder Plot",
+   "falsch": [
+    "The Spanish Armada",
+    "The Great Fire of London",
+    "The founding of the King's Men"
+   ],
+   "e": "Catholic plotters tried to blow up King James and Parliament."
+  },
+  {
+   "t": "context",
+   "q": "What does equivocation mean?",
+   "a": "Using double meanings to mislead without technically lying",
+   "falsch": [
+    "Speaking in rhyme",
+    "Talking to oneself on stage",
+    "Repeating the same words for emphasis"
+   ],
+   "e": "The witches' prophecies are equivocations: true, but misleading."
+  },
+  {
+   "t": "plot",
+   "q": "Which title does Macbeth receive right after meeting the witches?",
+   "a": "Thane of Cawdor",
+   "falsch": [
+    "Thane of Fife",
+    "Prince of Cumberland",
+    "Thane of Ross"
+   ],
+   "e": "The first prophecy comes true at once, so Macbeth starts to believe the rest."
+  },
+  {
+   "t": "plot",
+   "q": "Why is it a problem for Macbeth that Malcolm is named Prince of Cumberland?",
+   "a": "It makes Malcolm heir to the throne",
+   "falsch": [
+    "It makes Malcolm Macbeth's commander",
+    "It means Malcolm will marry Lady Macbeth",
+    "It sends Malcolm into exile"
+   ],
+   "e": "Macbeth reacts with \"Stars, hide your fires\": his dark desires grow."
+  },
+  {
+   "t": "plot",
+   "q": "What does Macbeth see just before he murders Duncan?",
+   "a": "A dagger floating in the air",
+   "falsch": [
+    "Banquo's ghost",
+    "The three witches",
+    "Birnam Wood moving"
+   ],
+   "e": "The dagger may be a sign of his guilty, overheated mind."
+  },
+  {
+   "t": "plot",
+   "q": "What does Lady Macbeth do after the murder?",
+   "a": "She takes the daggers back and smears the guards with blood",
+   "falsch": [
+    "She confesses to Duncan's sons",
+    "She calls Macduff for help",
+    "She hides the body in the castle"
+   ],
+   "e": "Macbeth was too shocked to go back himself."
+  },
+  {
+   "t": "plot",
+   "q": "Why do Malcolm and Donalbain flee?",
+   "a": "They fear they will be killed too",
+   "falsch": [
+    "They want to raise an army in Norway",
+    "They have been banished by Macbeth",
+    "The witches told them to leave"
+   ],
+   "e": "Their flight makes them look guilty, so Macbeth becomes king."
+  },
+  {
+   "t": "plot",
+   "q": "Why does Macbeth have Banquo murdered?",
+   "a": "The witches said Banquo's descendants would be kings, and Banquo suspects him",
+   "falsch": [
+    "Banquo has openly accused him of murder",
+    "Banquo wants to marry Lady Macbeth",
+    "Banquo has joined the English army"
+   ],
+   "e": "Fleance escapes, so the threat to Macbeth's line remains."
+  },
+  {
+   "t": "plot",
+   "q": "What happens at the banquet?",
+   "a": "Macbeth sees Banquo's ghost and loses control",
+   "falsch": [
+    "Lady Macbeth confesses the murder",
+    "Macduff attacks Macbeth",
+    "The witches appear to all the guests"
+   ],
+   "e": "Lady Macbeth tries to explain his behaviour as an old illness."
+  },
+  {
+   "t": "plot",
+   "q": "What do the apparitions in Act 4 tell Macbeth?",
+   "a": "Beware Macduff; no man born of a woman can harm him; he is safe until Birnam Wood comes to Dunsinane",
+   "falsch": [
+    "Banquo's ghost will kill him; Malcolm will forgive him",
+    "He must give up the crown to Malcolm",
+    "Lady Macbeth will betray him"
+   ],
+   "e": "The prophecies make him feel safe, but they are equivocations."
+  },
+  {
+   "t": "plot",
+   "q": "What does Macbeth do after Macduff flees to England?",
+   "a": "He has Macduff's wife and children murdered",
+   "falsch": [
+    "He makes peace with Macduff",
+    "He follows Macduff to England",
+    "He crowns Fleance as his heir"
+   ],
+   "e": "This senseless crime shows how far his tyranny has gone."
+  },
+  {
+   "t": "plot",
+   "q": "How does Birnam Wood come to Dunsinane?",
+   "a": "Malcolm's soldiers carry branches as camouflage",
+   "falsch": [
+    "A storm uproots the trees",
+    "The witches move the forest by magic",
+    "Macbeth orders the wood to be cut down"
+   ],
+   "e": "The prophecy comes true in a way Macbeth never expected."
+  },
+  {
+   "t": "plot",
+   "q": "Why can Macduff kill Macbeth?",
+   "a": "He was not born naturally but \"untimely ripped\" from his mother's womb",
+   "falsch": [
+    "He has a magic sword from England",
+    "He is protected by Banquo's ghost",
+    "Macbeth refuses to fight him"
+   ],
+   "e": "The prophecy \"none of woman born\" was another equivocation."
+  },
+  {
+   "t": "plot",
+   "q": "Who becomes king at the end of the play?",
+   "a": "Malcolm",
+   "falsch": [
+    "Macduff",
+    "Fleance",
+    "Donalbain"
+   ],
+   "e": "Duncan's son restores the rightful order."
+  },
+  {
+   "t": "characters",
+   "q": "How is Macbeth presented at the beginning?",
+   "a": "As a brave and loyal soldier",
+   "falsch": [
+    "As a cruel tyrant",
+    "As a coward who avoids battle",
+    "As a traitor working with Norway"
+   ],
+   "e": "The Captain calls him \"brave Macbeth\". His fall is so great because he starts so high."
+  },
+  {
+   "t": "characters",
+   "q": "How does Lady Macbeth persuade Macbeth to kill Duncan?",
+   "a": "She questions his courage and manhood",
+   "falsch": [
+    "She threatens to leave him",
+    "She shows him a letter from the witches",
+    "She promises to do it herself"
+   ],
+   "e": "\"When you durst do it, then you were a man.\""
+  },
+  {
+   "t": "characters",
+   "q": "How does Lady Macbeth change during the play?",
+   "a": "From strong and in control to broken by guilt",
+   "falsch": [
+    "From weak and fearful to powerful",
+    "She does not change at all",
+    "From loyal to Duncan to loyal to Malcolm"
+   ],
+   "e": "In Act 5 she sleepwalks and tries to wash invisible blood off her hands."
+  },
+  {
+   "t": "characters",
+   "q": "Why is Banquo a foil to Macbeth?",
+   "a": "He also hears a prophecy but does not act on it",
+   "falsch": [
+    "He helps Macbeth murder Duncan",
+    "He is the witches' leader",
+    "He becomes king instead of Macbeth"
+   ],
+   "e": "Banquo shows that Macbeth had a choice."
+  },
+  {
+   "t": "characters",
+   "q": "How does Macduff react to the news of his family's death?",
+   "a": "He grieves openly and then vows revenge",
+   "falsch": [
+    "He blames Malcolm and goes home",
+    "He hides his feelings completely",
+    "He joins Macbeth to save his life"
+   ],
+   "e": "\"I must also feel it as a man\": real manhood includes feelings."
+  },
+  {
+   "t": "characters",
+   "q": "What is Duncan's weakness as a king?",
+   "a": "He trusts people too easily",
+   "falsch": [
+    "He is cruel to his subjects",
+    "He is a coward in battle",
+    "He believes in the witches"
+   ],
+   "e": "He trusted the first Thane of Cawdor and then Macbeth, and both betrayed him."
+  },
+  {
+   "t": "characters",
+   "q": "Do the witches ever tell Macbeth to murder Duncan?",
+   "a": "No, they only predict that he will be king",
+   "falsch": [
+    "Yes, in their first meeting",
+    "Yes, in a letter",
+    "Yes, through Lady Macbeth"
+   ],
+   "e": "The decision to murder is Macbeth's own, which matters for the fate versus free will debate."
+  },
+  {
+   "t": "characters",
+   "q": "How does the relationship between Macbeth and Lady Macbeth change?",
+   "a": "Macbeth stops sharing his plans with her",
+   "falsch": [
+    "They become closer than ever",
+    "Lady Macbeth starts giving him orders again",
+    "They plan Banquo's murder together"
+   ],
+   "e": "He keeps her \"innocent of the knowledge\" of Banquo's murder."
+  },
+  {
+   "t": "themes",
+   "q": "In his soliloquy in Act 1, what does Macbeth admit is his only motive?",
+   "a": "Vaulting ambition",
+   "falsch": [
+    "Revenge for an insult",
+    "Love for his wife",
+    "Fear of the witches"
+   ],
+   "e": "He knows he has no good reason to kill Duncan."
+  },
+  {
+   "t": "themes",
+   "q": "Which image keeps appearing to show guilt?",
+   "a": "Blood",
+   "falsch": [
+    "Flowers",
+    "Gold",
+    "The sea at sunrise"
+   ],
+   "e": "From Macbeth's bloody hands in Act 2 to Lady Macbeth's \"damned spot\" in Act 5."
+  },
+  {
+   "t": "themes",
+   "q": "What does \"Fair is foul, and foul is fair\" suggest?",
+   "a": "Things are not what they seem",
+   "falsch": [
+    "The weather in Scotland is bad",
+    "The witches are actually good",
+    "Beauty is the highest value"
+   ],
+   "e": "It introduces the theme of appearance and reality."
+  },
+  {
+   "t": "themes",
+   "q": "Which question does the play leave open?",
+   "a": "Whether Macbeth is controlled by fate or chooses freely",
+   "falsch": [
+    "Whether Duncan was really killed",
+    "Who Fleance's mother is",
+    "Whether Malcolm survives"
+   ],
+   "e": "That is why fate versus free will is a popular exam topic."
+  },
+  {
+   "t": "themes",
+   "q": "How does the play link the murder of the king with nature?",
+   "a": "Nature is thrown into disorder: darkness, storms and strange animal behaviour",
+   "falsch": [
+    "Nature stays completely calm",
+    "Spring comes early",
+    "Only the witches notice any change"
+   ],
+   "e": "Regicide breaks the God-given order, so the whole world reacts."
+  },
+  {
+   "t": "themes",
+   "q": "How does Lady Macbeth define being a man?",
+   "a": "Being willing to use violence",
+   "falsch": [
+    "Being loyal to the king",
+    "Being honest at all times",
+    "Being able to show feelings"
+   ],
+   "e": "Macduff later shows a different idea of manhood."
+  },
+  {
+   "t": "themes",
+   "q": "What does the loss of sleep stand for?",
+   "a": "The loss of innocence and peace of mind",
+   "falsch": [
+    "Macbeth's hard work as king",
+    "The long nights in Scotland",
+    "The witches' magic"
+   ],
+   "e": "\"Macbeth does murder sleep.\""
+  },
+  {
+   "t": "language",
+   "q": "What is a soliloquy?",
+   "a": "A speech in which a character alone on stage reveals their thoughts",
+   "falsch": [
+    "A conversation between two characters",
+    "A song performed by the witches",
+    "A speech addressed to the king"
+   ],
+   "e": "Macbeth's soliloquies show his inner conflict."
+  },
+  {
+   "t": "language",
+   "q": "Why does Lady Macbeth speak in prose in the sleepwalking scene?",
+   "a": "It shows that her mind has lost control",
+   "falsch": [
+    "Because she is talking to servants",
+    "Because she is reading a letter",
+    "Because she is speaking to the witches"
+   ],
+   "e": "Earlier she spoke in confident blank verse."
+  },
+  {
+   "t": "language",
+   "q": "How are the witches' speeches different?",
+   "a": "Short rhyming lines with a chant-like rhythm",
+   "falsch": [
+    "Long speeches in prose",
+    "They speak only Latin",
+    "They never speak in public"
+   ],
+   "e": "\"Double, double toil and trouble\": it sounds like a spell."
+  },
+  {
+   "t": "language",
+   "q": "Which of these is dramatic irony?",
+   "a": "Duncan praises the castle where he will be murdered",
+   "falsch": [
+    "Macbeth talks to himself about the dagger",
+    "The witches speak in rhymes",
+    "Malcolm is crowned at the end"
+   ],
+   "e": "The audience knows more than Duncan."
+  },
+  {
+   "t": "language",
+   "q": "What does the clothing imagery (\"a giant's robe upon a dwarfish thief\") suggest?",
+   "a": "Macbeth is not fit to be king",
+   "falsch": [
+    "Macbeth is very rich",
+    "The weather is cold",
+    "Macbeth is in disguise"
+   ],
+   "e": "The title does not belong to him, like stolen clothes that are too big."
+  },
+  {
+   "t": "language",
+   "q": "What is the function of the Porter scene?",
+   "a": "Comic relief that also turns the castle into the gate of hell",
+   "falsch": [
+    "It introduces Banquo's ghost",
+    "It explains the witches' prophecy",
+    "It shows Malcolm's coronation"
+   ],
+   "e": "It comes right after the murder, so the joke has a dark meaning."
+  },
+  {
+   "t": "language",
+   "q": "What is Macbeth's hamartia (fatal flaw)?",
+   "a": "His ambition",
+   "falsch": [
+    "His cowardice",
+    "His love of money",
+    "His honesty"
+   ],
+   "e": "A tragic hero falls because of his own flaw."
+  }
+ ],
+ "karten": [
+  {
+   "begriff": "Thane",
+   "erklaerung": "Scottish noble title, similar to a lord. Macbeth is Thane of Glamis and then Thane of Cawdor.",
+   "t": "context",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Regicide",
+   "erklaerung": "The murder of a king. For Shakespeare's audience the worst possible crime.",
+   "t": "context",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Divine Right of Kings",
+   "erklaerung": "Belief that kings are chosen by God. Attacking a king means attacking God's order.",
+   "t": "context",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Great Chain of Being",
+   "erklaerung": "The idea that God gave everything a fixed place in an order from God down to animals and plants. Regicide breaks this chain, so nature goes wrong.",
+   "t": "context",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Equivocation",
+   "erklaerung": "Using double meanings to mislead without technically lying. The witches' prophecies work like this.",
+   "t": "context",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Tragic hero",
+   "erklaerung": "A noble character with good qualities who falls because of a fatal flaw. The audience feels pity and fear.",
+   "t": "language",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Hamartia",
+   "erklaerung": "The tragic hero's fatal flaw. Macbeth's is his ambition.",
+   "t": "language",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Soliloquy",
+   "erklaerung": "A speech in which a character, alone on stage, speaks their thoughts aloud.",
+   "t": "language",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Aside",
+   "erklaerung": "A short remark the audience hears but the other characters on stage do not.",
+   "t": "language",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Dramatic irony",
+   "erklaerung": "The audience knows something a character does not, for example when Duncan praises the castle where he will be killed.",
+   "t": "language",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Blank verse",
+   "erklaerung": "Unrhymed lines with five stresses each (iambic pentameter). Used by most noble characters.",
+   "t": "language",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Pathetic fallacy",
+   "erklaerung": "Weather and nature reflect human feelings or deeds, for example storms and darkness after the murder.",
+   "t": "language",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Foil",
+   "erklaerung": "A character who contrasts with another and so highlights their qualities, for example Banquo or Macduff for Macbeth.",
+   "t": "characters",
+   "typ": "begriff"
+  },
+  {
+   "begriff": "Macbeth",
+   "erklaerung": "Thane of Glamis and Cawdor, then king. A brave soldier who becomes a tyrant out of ambition.",
+   "t": "characters",
+   "typ": "person"
+  },
+  {
+   "begriff": "Lady Macbeth",
+   "erklaerung": "Macbeth's wife. Pushes him to murder, later broken by guilt; sleepwalks and dies.",
+   "t": "characters",
+   "typ": "person"
+  },
+  {
+   "begriff": "Banquo",
+   "erklaerung": "Macbeth's fellow general. Hears a prophecy too but resists. Murdered on Macbeth's orders.",
+   "t": "characters",
+   "typ": "person"
+  },
+  {
+   "begriff": "Fleance",
+   "erklaerung": "Banquo's son. Escapes the murderers, so Banquo's line can still become kings.",
+   "t": "characters",
+   "typ": "person"
+  },
+  {
+   "begriff": "Duncan",
+   "erklaerung": "The good but too trusting King of Scotland, murdered by Macbeth.",
+   "t": "characters",
+   "typ": "person"
+  },
+  {
+   "begriff": "Malcolm",
+   "erklaerung": "Duncan's elder son and heir. Flees to England, returns with an army and becomes king.",
+   "t": "characters",
+   "typ": "person"
+  },
+  {
+   "begriff": "Donalbain",
+   "erklaerung": "Duncan's younger son. Flees to Ireland after the murder.",
+   "t": "characters",
+   "typ": "person"
+  },
+  {
+   "begriff": "Macduff",
+   "erklaerung": "Thane of Fife. Discovers Duncan's body, opposes Macbeth, loses his family and kills Macbeth.",
+   "t": "characters",
+   "typ": "person"
+  },
+  {
+   "begriff": "Lady Macduff",
+   "erklaerung": "Macduff's wife. Murdered with her children on Macbeth's orders; feels abandoned by her husband.",
+   "t": "characters",
+   "typ": "person"
+  },
+  {
+   "begriff": "The Witches",
+   "erklaerung": "The \"weird sisters\". Make prophecies with double meanings; never order Macbeth to act.",
+   "t": "characters",
+   "typ": "person"
+  },
+  {
+   "begriff": "The Porter",
+   "erklaerung": "Drunken gatekeeper of Macbeth's castle. Pretends to guard the gate of hell; comic relief.",
+   "t": "characters",
+   "typ": "person"
+  },
+  {
+   "begriff": "King James I",
+   "erklaerung": "King of Scotland and England when the play was written. Believed he was descended from Banquo; wrote about witchcraft.",
+   "t": "context",
+   "typ": "person"
+  },
+  {
+   "begriff": "Fair is foul, and foul is fair.",
+   "erklaerung": "The Witches, Act 1, Scene 1, the opening of the play. Paradox: nothing is what it seems. Sets up the theme of appearance and reality and moral confusion.",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "So foul and fair a day I have not seen.",
+   "erklaerung": "Macbeth, Act 1, Scene 3, his very first words. Echoes the witches before he has even met them: a hidden link between him and evil.",
+   "t": "language",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Stars, hide your fires; / Let not light see my black and deep desires.",
+   "erklaerung": "Macbeth, Act 1, Scene 4, aside after Malcolm is named heir. His ambition is already dark; darkness imagery for evil thoughts.",
+   "t": "characters",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "There's no art / To find the mind's construction in the face.",
+   "erklaerung": "Duncan, Act 1, Scene 4, about the traitor Cawdor. You cannot see someone's thoughts in their face. Dramatic irony: he then trusts Macbeth.",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Yet do I fear thy nature; / It is too full o' th' milk of human kindness",
+   "erklaerung": "Lady Macbeth, Act 1, Scene 5, after reading his letter. She thinks Macbeth is too kind to kill: she will have to push him.",
+   "t": "characters",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Come, you spirits / That tend on mortal thoughts, unsex me here",
+   "erklaerung": "Lady Macbeth, Act 1, Scene 5. She calls on evil spirits to take away her womanly pity. Gender and the supernatural.",
+   "t": "characters",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Look like th' innocent flower, / But be the serpent under 't.",
+   "erklaerung": "Lady Macbeth, Act 1, Scene 5, advice to Macbeth. Hide evil behind an innocent face. Appearance and reality; the serpent recalls the devil.",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on th' other.",
+   "erklaerung": "Macbeth, Act 1, Scene 7, soliloquy before the murder. His only motive is ambition, and he knows it will make him fall. Hamartia.",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "I dare do all that may become a man; / Who dares do more is none.",
+   "erklaerung": "Macbeth, Act 1, Scene 7, to Lady Macbeth. A real man has limits; murder would make him less than a man. Masculinity.",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "When you durst do it, then you were a man",
+   "erklaerung": "Lady Macbeth, Act 1, Scene 7. She links manhood with daring to murder and shames him into it.",
+   "t": "characters",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "False face must hide what the false heart doth know.",
+   "erklaerung": "Macbeth, Act 1, Scene 7, the last line of the act. He has decided: deception is now his plan. Appearance and reality.",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Is this a dagger which I see before me, / The handle toward my hand?",
+   "erklaerung": "Macbeth, Act 2, Scene 1, soliloquy before the murder. A hallucination: his guilty mind or the supernatural leading him on.",
+   "t": "language",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Will all great Neptune's ocean wash this blood / Clean from my hand?",
+   "erklaerung": "Macbeth, Act 2, Scene 2, after the murder. Not even the whole ocean can wash away his guilt. Blood imagery.",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "A little water clears us of this deed.",
+   "erklaerung": "Lady Macbeth, Act 2, Scene 2, after the murder. She thinks guilt is easy to wash off. Ironic contrast to her hand-washing in Act 5.",
+   "t": "characters",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Sleep no more! / Macbeth does murder sleep.",
+   "erklaerung": "Macbeth, Act 2, Scene 2, repeating a voice he heard. By killing a sleeping man he has destroyed his own peace. Sleep imagery.",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "There's daggers in men's smiles",
+   "erklaerung": "Donalbain, Act 2, Scene 3, before fleeing. Friendly faces may hide murderers. Appearance and reality.",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Thou hast it now: King, Cawdor, Glamis, all, / As the weird women promised, and I fear / Thou play'dst most foully for 't.",
+   "erklaerung": "Banquo, Act 3, Scene 1, soliloquy. Banquo suspects Macbeth. The reason Macbeth decides to kill him.",
+   "t": "characters",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "O, full of scorpions is my mind, dear wife!",
+   "erklaerung": "Macbeth, Act 3, Scene 2. As king he has no peace: his mind is poisoned by fear and guilt.",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "I am in blood / Stepped in so far that, should I wade no more, / Returning were as tedious as go o'er.",
+   "erklaerung": "Macbeth, Act 3, Scene 4, after the banquet. He has killed so much that going back is as hard as going on. One crime leads to the next.",
+   "t": "characters",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "By the pricking of my thumbs, / Something wicked this way comes.",
+   "erklaerung": "Second Witch, Act 4, Scene 1, as Macbeth arrives. Even the witches now call Macbeth wicked.",
+   "t": "characters",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Be bloody, bold, and resolute; laugh to scorn / The power of man, for none of woman born / Shall harm Macbeth.",
+   "erklaerung": "Second Apparition, Act 4, Scene 1. Gives Macbeth false security. Equivocation: Macduff was not born the normal way.",
+   "t": "language",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "I shall do so; / But I must also feel it as a man.",
+   "erklaerung": "Macduff, Act 4, Scene 3, after hearing about his family. Real manhood includes grief and feeling, not only violence.",
+   "t": "characters",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Out, damned spot! out, I say!",
+   "erklaerung": "Lady Macbeth, Act 5, Scene 1, sleepwalking. She tries to wash away blood that is not there. Her guilt has broken her.",
+   "t": "characters",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "All the perfumes of Arabia will not sweeten this little hand.",
+   "erklaerung": "Lady Macbeth, Act 5, Scene 1, sleepwalking. Echoes Macbeth's \"Neptune's ocean\": now she feels the guilt she once dismissed.",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "What's done cannot be undone.",
+   "erklaerung": "Lady Macbeth, Act 5, Scene 1, sleepwalking. Earlier she said \"What's done is done\" calmly; now the same idea haunts her.",
+   "t": "characters",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Now does he feel his title / Hang loose about him, like a giant's robe / Upon a dwarfish thief.",
+   "erklaerung": "Angus, a Scottish lord, Act 5, Scene 2. Clothing imagery: the crown is stolen and too big for Macbeth.",
+   "t": "language",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day",
+   "erklaerung": "Macbeth, Act 5, Scene 5, after hearing of his wife's death. Time feels endless and empty. Start of his most hopeless soliloquy.",
+   "t": "language",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Life's but a walking shadow, a poor player / That struts and frets his hour upon the stage / And then is heard no more.",
+   "erklaerung": "Macbeth, Act 5, Scene 5, same soliloquy. Life is meaningless, like an actor who is soon forgotten. Ends: \"full of sound and fury, signifying nothing\".",
+   "t": "themes",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "Macduff was from his mother's womb / Untimely ripped.",
+   "erklaerung": "Macduff, Act 5, the final battle. He was born by a cut, not \"of woman born\" in the normal way. Macbeth's last security is gone.",
+   "t": "plot",
+   "typ": "zitat"
+  },
+  {
+   "begriff": "this dead butcher and his fiend-like queen",
+   "erklaerung": "Malcolm, Act 5, the final speech. How the new king judges them. Is it the whole truth? A good question for discussion.",
+   "t": "characters",
+   "typ": "zitat"
+  }
+ ],
+ "ketten": [
+  {
+   "t": "plot",
+   "titel": "Macbeth's rise and fall",
+   "merk": "One prophecy and one decision start a chain that ends in his death.",
+   "schritte": [
+    "The witches prophesy that Macbeth will be king",
+    "He becomes Thane of Cawdor and his ambition awakens",
+    "Persuaded by Lady Macbeth, he murders Duncan and becomes king",
+    "Afraid of Banquo's prophecy, he has Banquo killed",
+    "Feeling safe after the second prophecy, he has Macduff's family murdered",
+    "Macduff and Malcolm return with an army and Macbeth is killed"
+   ]
+  },
+  {
+   "t": "characters",
+   "titel": "Lady Macbeth's decline",
+   "merk": "She starts as the stronger partner and ends as the one destroyed by guilt.",
+   "schritte": [
+    "She reads the letter and wants the crown for Macbeth",
+    "She calls on evil spirits and plans the murder",
+    "She controls Macbeth and covers up the crime",
+    "Macbeth shuts her out of his later plans",
+    "Her guilt surfaces in sleepwalking and hand-washing",
+    "She dies, probably by her own hand"
+   ]
+  },
+  {
+   "t": "themes",
+   "titel": "One crime leads to the next",
+   "merk": "\"I am in blood stepped in so far ...\": every murder makes the next one necessary.",
+   "schritte": [
+    "Macbeth murders Duncan",
+    "He kills the guards to hide the crime",
+    "Banquo suspects him and his sons are promised the crown",
+    "He has Banquo murdered",
+    "Macduff turns against him",
+    "He has Macduff's family killed and all Scotland turns against him"
+   ]
+  },
+  {
+   "t": "themes",
+   "titel": "Kingship and order",
+   "merk": "Regicide breaks the natural order; only the rightful king can restore it.",
+   "schritte": [
+    "Duncan is the rightful, God-given king",
+    "Macbeth commits regicide",
+    "Nature is thrown into disorder",
+    "Scotland suffers under a tyrant",
+    "Malcolm returns with the support of a good English king",
+    "Order is restored with Malcolm as king"
+   ]
+  },
+  {
+   "t": "language",
+   "titel": "The witches' equivocation",
+   "merk": "The prophecies are true, but not in the way Macbeth thinks.",
+   "schritte": [
+    "The first prophecy comes true when he becomes Thane of Cawdor",
+    "So Macbeth trusts the witches",
+    "The apparitions say no man of woman born can harm him and he is safe until Birnam Wood moves",
+    "He feels invincible",
+    "The soldiers carry branches from Birnam Wood and Macduff was not born naturally",
+    "Macbeth realizes he was tricked and dies"
+   ]
+  }
+ ],
+ "sprechen": [
+  {
+   "t": "characters",
+   "art": "monolog",
+   "titel": "Macbeth: hero to tyrant",
+   "q": "Present the character of Macbeth and explain how he changes from a hero into a tyrant.",
+   "punkte": [
+    "Beginning: brave, loyal soldier, praised by Duncan",
+    "The prophecy awakens ambition he already had",
+    "Hesitation and conscience before the murder; Lady Macbeth's pressure",
+    "Guilt after the murder: dagger, blood, lost sleep",
+    "He becomes a tyrant who kills alone (Banquo, Macduff's family)",
+    "End: empty and hopeless, but fights to the last: tragic hero"
+   ],
+   "zitate": [
+    "Vaulting ambition, which o'erleaps itself",
+    "I am in blood / Stepped in so far ...",
+    "Tomorrow, and tomorrow, and tomorrow"
+   ],
+   "nachfragen": [
+    "Is there anything left to admire in Macbeth at the end?",
+    "When exactly does he become a villain, in your opinion?",
+    "Who is more to blame, Macbeth or his wife?"
+   ]
+  },
+  {
+   "t": "characters",
+   "art": "monolog",
+   "titel": "Lady Macbeth",
+   "q": "Present Lady Macbeth and explain her role in the play.",
+   "punkte": [
+    "Ambitious for her husband, reads his letter and plans the murder",
+    "Calls on spirits to \"unsex\" her",
+    "Manipulates Macbeth by attacking his manhood",
+    "In control during the murder and the banquet",
+    "Shut out by Macbeth, loses influence",
+    "Breakdown: sleepwalking, hand-washing, death; reversal of roles"
+   ],
+   "zitate": [
+    "unsex me here",
+    "When you durst do it, then you were a man",
+    "Out, damned spot!"
+   ],
+   "nachfragen": [
+    "Is she a monster or a victim?",
+    "Why does she break down while Macbeth carries on?",
+    "Would Macbeth have killed Duncan without her?"
+   ]
+  },
+  {
+   "t": "themes",
+   "art": "monolog",
+   "titel": "Ambition",
+   "q": "Explain the role of ambition in Macbeth.",
+   "punkte": [
+    "Ambition is Macbeth's fatal flaw (hamartia)",
+    "The witches only awaken what is already there",
+    "Lady Macbeth's ambition for him",
+    "Contrast: Banquo controls his ambition",
+    "Ambition leads to murder, tyranny and guilt",
+    "Message: ambition without morality destroys"
+   ],
+   "zitate": [
+    "Vaulting ambition, which o'erleaps itself",
+    "Stars, hide your fires",
+    "Thou play'dst most foully for 't"
+   ],
+   "nachfragen": [
+    "Is ambition always negative?",
+    "What would a healthy kind of ambition look like?",
+    "Can you think of a modern example of destructive ambition?"
+   ]
+  },
+  {
+   "t": "themes",
+   "art": "monolog",
+   "titel": "Guilt",
+   "q": "Present the theme of guilt and explain how Shakespeare shows it.",
+   "punkte": [
+    "Blood imagery: hands that cannot be washed clean",
+    "Hallucinations: dagger and Banquo's ghost",
+    "Loss of sleep",
+    "Macbeth's guilt grows into fear and more violence",
+    "Lady Macbeth suppresses guilt, then it destroys her",
+    "Contrast \"a little water\" and \"all the perfumes of Arabia\""
+   ],
+   "zitate": [
+    "Will all great Neptune's ocean wash this blood",
+    "A little water clears us of this deed",
+    "Out, damned spot!"
+   ],
+   "nachfragen": [
+    "Who suffers more from guilt, Macbeth or Lady Macbeth?",
+    "Is the ghost real or imagined?",
+    "Why does guilt make Macbeth more violent instead of stopping him?"
+   ]
+  },
+  {
+   "t": "themes",
+   "art": "monolog",
+   "titel": "Fate or free will?",
+   "q": "Explain the role of the witches. Is Macbeth controlled by fate or does he choose freely?",
+   "punkte": [
+    "The witches predict, they never order",
+    "Macbeth decides to kill: free will",
+    "Self-fulfilling prophecy",
+    "Banquo hears a prophecy too and does nothing",
+    "Second prophecy gives false security: equivocation",
+    "Your own opinion with a reason"
+   ],
+   "zitate": [
+    "Fair is foul, and foul is fair",
+    "Something wicked this way comes",
+    "none of woman born / Shall harm Macbeth"
+   ],
+   "nachfragen": [
+    "Would Macbeth have become king without murder?",
+    "Why did a Jacobean audience take the witches seriously?",
+    "Are the witches evil or just honest?"
+   ]
+  },
+  {
+   "t": "context",
+   "art": "monolog",
+   "titel": "Historical context",
+   "q": "Explain how the historical context shaped Macbeth.",
+   "punkte": [
+    "Written around 1606 for King James I",
+    "Divine Right of Kings and the Great Chain of Being",
+    "Regicide as the worst crime; nature reacts",
+    "Banquo as James's ancestor, line of kings in Act 4",
+    "Gunpowder Plot and equivocation",
+    "Belief in witchcraft, James's book on witches"
+   ],
+   "zitate": [
+    "Fair is foul, and foul is fair",
+    "There's daggers in men's smiles"
+   ],
+   "nachfragen": [
+    "Would the play work the same way for a modern audience?",
+    "Why is Banquo not shown as Macbeth's accomplice?",
+    "What message did Shakespeare send to King James?"
+   ]
+  },
+  {
+   "t": "language",
+   "art": "monolog",
+   "titel": "Imagery",
+   "q": "Choose two key images in Macbeth (for example blood, sleep, darkness, clothing) and explain their meaning.",
+   "punkte": [
+    "Blood: violence and guilt",
+    "Sleep: innocence and peace that Macbeth loses",
+    "Darkness: evil and hidden deeds",
+    "Clothing: the crown does not fit Macbeth",
+    "How the images develop from Act 1 to Act 5",
+    "Effect on the audience"
+   ],
+   "zitate": [
+    "Stars, hide your fires",
+    "Macbeth does murder sleep",
+    "like a giant's robe / Upon a dwarfish thief"
+   ],
+   "nachfragen": [
+    "Which image do you find most effective and why?",
+    "How would you show this image on stage?",
+    "How does the imagery connect to the theme of guilt?"
+   ]
+  },
+  {
+   "t": "themes",
+   "art": "monolog",
+   "titel": "Appearance and reality",
+   "q": "\"Fair is foul, and foul is fair.\" Explain what this line means for the whole play.",
+   "punkte": [
+    "Paradox in the opening scene",
+    "Characters hide evil behind innocent faces",
+    "Duncan's misjudgement of Cawdor and Macbeth",
+    "The witches' prophecies are true but misleading",
+    "Macbeth's hallucinations blur what is real",
+    "The line as a key to the moral confusion of the play"
+   ],
+   "zitate": [
+    "Look like th' innocent flower, / But be the serpent under 't",
+    "False face must hide what the false heart doth know",
+    "There's no art / To find the mind's construction in the face"
+   ],
+   "nachfragen": [
+    "Who in the play is honest?",
+    "How does this theme connect to the Gunpowder Plot?",
+    "Is Malcolm also deceiving people when he tests Macduff?"
+   ]
+  },
+  {
+   "t": "characters",
+   "art": "monolog",
+   "titel": "Macbeth and Banquo",
+   "q": "Compare Macbeth and Banquo.",
+   "punkte": [
+    "Both brave generals at the start",
+    "Both hear prophecies",
+    "Macbeth acts, Banquo waits and distrusts the witches",
+    "Banquo suspects Macbeth but stays silent",
+    "Banquo's ghost as Macbeth's guilt",
+    "Banquo as foil and as King James's ancestor"
+   ],
+   "zitate": [
+    "Thou hast it now: King, Cawdor, Glamis, all",
+    "Vaulting ambition, which o'erleaps itself"
+   ],
+   "nachfragen": [
+    "Is Banquo completely innocent? He keeps silent about his suspicions.",
+    "Why does Shakespeare need Banquo in the play?"
+   ]
+  },
+  {
+   "t": "themes",
+   "art": "gespraech",
+   "titel": "Who is to blame?",
+   "q": "Who is most responsible for Duncan's murder: Macbeth, Lady Macbeth or the witches?",
+   "rollen": [
+    "Partner A: Macbeth himself is to blame.",
+    "Partner B: Lady Macbeth and the witches carry most of the blame."
+   ],
+   "punkte": [
+    "Macbeth: he has the idea first and commits the murder",
+    "Lady Macbeth: plans and pushes, attacks his manhood",
+    "The witches: plant the idea but never order it",
+    "Free will: Banquo resists the same temptation",
+    "Responsibility can be shared, but the final decision is Macbeth's",
+    "Reach a conclusion together"
+   ],
+   "zitate": [
+    "Stars, hide your fires",
+    "When you durst do it, then you were a man",
+    "Vaulting ambition"
+   ],
+   "nachfragen": [
+    "Would your answer be different for Banquo's murder?",
+    "Do the witches deserve punishment?",
+    "Does Lady Macbeth's breakdown change your view?"
+   ]
+  },
+  {
+   "t": "characters",
+   "art": "gespraech",
+   "titel": "Tragic hero or villain?",
+   "q": "Is Macbeth a tragic hero or simply a villain?",
+   "rollen": [
+    "Partner A: Macbeth is a tragic hero.",
+    "Partner B: Macbeth is simply a villain."
+   ],
+   "punkte": [
+    "Definition of tragic hero: high status, good qualities, fatal flaw, fall",
+    "Macbeth's good qualities at the start",
+    "His conscience and suffering",
+    "His crimes become worse and senseless (Macduff's family)",
+    "Malcolm calls him a \"dead butcher\"",
+    "Audience reaction: pity, fear, or only relief?"
+   ],
+   "zitate": [
+    "brave Macbeth",
+    "Life's but a walking shadow",
+    "this dead butcher and his fiend-like queen"
+   ],
+   "nachfragen": [
+    "Can a tyrant still be tragic?",
+    "Does Macbeth still deserve pity in Act 5?",
+    "Is Malcolm's judgement fair?"
+   ]
+  },
+  {
+   "t": "characters",
+   "art": "gespraech",
+   "titel": "The stronger partner?",
+   "q": "Is Lady Macbeth a stronger character than Macbeth?",
+   "rollen": [
+    "Partner A: Lady Macbeth is the stronger character.",
+    "Partner B: Macbeth is stronger in the end."
+   ],
+   "punkte": [
+    "Act 1 and 2: she is stronger and decides",
+    "She controls the situation after the murder and at the banquet",
+    "Macbeth becomes independent and ruthless later",
+    "She breaks down, he carries on",
+    "Different kinds of strength: will, conscience, endurance",
+    "Reversal of roles"
+   ],
+   "zitate": [
+    "unsex me here",
+    "A little water clears us of this deed",
+    "Out, damned spot!"
+   ],
+   "nachfragen": [
+    "What does strength mean in this play?",
+    "Is her breakdown weakness or a sign of conscience?"
+   ]
+  },
+  {
+   "t": "themes",
+   "art": "gespraech",
+   "titel": "Can you escape your fate?",
+   "q": "Does the play show that you cannot escape your fate?",
+   "rollen": [
+    "Partner A: Fate decides everything.",
+    "Partner B: Macbeth's choices decide everything."
+   ],
+   "punkte": [
+    "The prophecies all come true",
+    "But Macbeth chooses how they come true",
+    "Self-fulfilling prophecy",
+    "Banquo's line becomes kings without any crime",
+    "Equivocation: fate tricks Macbeth",
+    "Open ending of the debate"
+   ],
+   "zitate": [
+    "Fair is foul, and foul is fair",
+    "none of woman born / Shall harm Macbeth"
+   ],
+   "nachfragen": [
+    "Would Macbeth have become king anyway?",
+    "What would a Jacobean audience have believed?"
+   ]
+  },
+  {
+   "t": "themes",
+   "art": "gespraech",
+   "titel": "A good ruler",
+   "q": "What makes a good ruler according to the play?",
+   "rollen": [
+    "Partner A: Kindness and trust make a good ruler.",
+    "Partner B: Caution and strength make a good ruler."
+   ],
+   "punkte": [
+    "Duncan: generous and kind, but too trusting",
+    "Macbeth as tyrant: fear, murder, chaos",
+    "Malcolm: careful, tests loyalty, lists royal virtues",
+    "The English king as an ideal, healing ruler",
+    "Legitimacy: the rightful king restores order",
+    "Link to King James I and the Divine Right of Kings"
+   ],
+   "zitate": [
+    "There's no art / To find the mind's construction in the face",
+    "like a giant's robe / Upon a dwarfish thief"
+   ],
+   "nachfragen": [
+    "Is Duncan a good king if he is so easily fooled?",
+    "Is Malcolm's testing of Macduff clever or dishonest?",
+    "Do these ideas still apply to leaders today?"
+   ]
+  },
+  {
+   "t": "themes",
+   "art": "gespraech",
+   "titel": "Still relevant today?",
+   "q": "Is Macbeth still relevant today?",
+   "rollen": [
+    "Partner A: Macbeth is completely relevant today.",
+    "Partner B: Macbeth is mainly a play of its own time."
+   ],
+   "punkte": [
+    "Ambition and the abuse of power",
+    "Guilt and mental health",
+    "Manipulation in relationships",
+    "Leaders who rule through fear",
+    "Appearance and reality: fake images, lies",
+    "But: witches, kings and Divine Right are part of a very different world"
+   ],
+   "zitate": [
+    "Vaulting ambition",
+    "There's daggers in men's smiles"
+   ],
+   "nachfragen": [
+    "Which theme is the most modern?",
+    "How would you stage Macbeth today?"
+   ]
+  }
+ ],
+ "phrasen": [
+  {
+   "gruppe": "Starting your talk",
+   "items": [
+    "Today I'd like to talk about ...",
+    "First I will ..., then ..., and finally ...",
+    "This question is central to the play because ..."
+   ]
+  },
+  {
+   "gruppe": "Giving your opinion",
+   "items": [
+    "In my view, ...",
+    "I would argue that ...",
+    "It seems to me that ...",
+    "I'm convinced that ... because ..."
+   ]
+  },
+  {
+   "gruppe": "Referring to the text",
+   "items": [
+    "This is shown in Act 2, when ...",
+    "A good example is the scene where ...",
+    "As Lady Macbeth puts it, \"...\"",
+    "This quote suggests / reveals / shows that ..."
+   ]
+  },
+  {
+   "gruppe": "Agreeing",
+   "items": [
+    "I agree with you, because ...",
+    "That's a good point, and I'd add that ...",
+    "Exactly, and that's also why ..."
+   ]
+  },
+  {
+   "gruppe": "Disagreeing politely",
+   "items": [
+    "I see your point, but ...",
+    "I'm not sure I agree, because ...",
+    "That may be true; however, ...",
+    "On the other hand, ..."
+   ]
+  },
+  {
+   "gruppe": "Keeping the conversation going",
+   "items": [
+    "What do you think about ...?",
+    "Could you explain what you mean by ...?",
+    "Let's look at it from another angle.",
+    "Coming back to what you said about ..."
+   ]
+  },
+  {
+   "gruppe": "Buying time and repairing",
+   "items": [
+    "That's an interesting question. Let me think ...",
+    "What I mean is ...",
+    "In other words, ...",
+    "Let me put it differently."
+   ]
+  },
+  {
+   "gruppe": "Concluding",
+   "items": [
+    "To sum up, ...",
+    "All in all, ...",
+    "This shows that ...",
+    "So in the end, I'd say ..."
+   ]
+  }
+ ],
+ "operatoren": [
+  {
+   "name": "Present / Describe",
+   "afb": "I",
+   "text": "Give a structured overview of the main facts."
+  },
+  {
+   "name": "Explain / Analyse",
+   "afb": "II",
+   "text": "Show how and why something works, using examples and quotes."
+  },
+  {
+   "name": "Compare",
+   "afb": "II",
+   "text": "Point out similarities and differences."
+  },
+  {
+   "name": "Discuss / Assess",
+   "afb": "III",
+   "text": "Weigh arguments for and against and come to your own conclusion."
+  }
  ]
 }
